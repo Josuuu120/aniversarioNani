@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Amor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="collage-container">
+        <!-- Left side photos -->
+        <div class="photo-left photo1">
+            <img src="https://i.pinimg.com/736x/a7/21/bc/a721bcb235622e6e0c8dd633e825c134.jpg" alt="Photo 1">
+        </div>
+        <div class="photo-left photo2">
+            <img src="https://i.pinimg.com/736x/29/38/17/2938173b8f45fa7e346bd8b3856fee38.jpg" alt="Photo 2">
+        </div>
+        <div class="photo-left photo3">
+            <img src="https://picsum.photos/300/200?random=3" alt="Photo 3">
+        </div>
+
+        <!-- Right side photos -->
+        <div class="photo-right photo4">
+            <img src="https://picsum.photos/300/200?random=4" alt="Photo 4">
+        </div>
+        <div class="photo-right photo5">
+            <img src="https://picsum.photos/300/200?random=5" alt="Photo 5">
+        </div>
+        <div class="photo-right photo6">
+            <img src="https://picsum.photos/300/200?random=6" alt="Photo 6">
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Holaaa amormiooo</h1>
+        <p>Quieres empezar?</p>
+
+        <div class="button-container">
+            <a href="page2.html" class="btn yes-btn">Si</a>
+            <button class="btn no-btn" onclick="shrinkButton()">No</button>
+        </div>
+
+    </div>
+    <div class="horizontal-image">
+        <img src="https://i.pinimg.com/736x/1c/b6/5b/1cb65b7d683edc18e81631d83dd45a99.jpg" alt="Horizontal Image">
+    </div>
+    <script>
+        let clickCount = 0;
+        const maxClicks = 6;
+
+        function shrinkButton() {
+            const noBtn = document.querySelector('.no-btn');
+            clickCount++;
+
+            if (clickCount <= maxClicks) {
+                const newSize = 100 - (clickCount * 15); // Shrinks 15% each time
+                noBtn.style.transform = `scale(${newSize / 100})`;
+
+                if (clickCount === maxClicks) {
+                    noBtn.textContent = "😢";
+                    noBtn.style.pointerEvents = "none"; // Disable further clicks
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

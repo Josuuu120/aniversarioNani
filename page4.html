@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Belén</title>
+    <link rel="stylesheet" href="page4.css">
+    <style>
+        /* Optional: makes verses fade in */
+        .verse {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="poem-container">
+        <div class="image-container">
+            <img src="https://via.placeholder.com/300x200/ffffff/cccccc?text=Your+Image" alt="Image for Mi Belén"
+                class="poem-image">
+        </div>
+        <h1 class="main-title">Mi Belén</h1>
+
+        <div class="poem-content">
+            <div class="verse" id="verse1">Amor mio eres todo lo que siempre quería y no sabía que necesitaba. Desde que
+                llegaste a mi
+                vida no he podido encontrar nada similar, eres todo lo bueno y real de este mundo. Conocí lo que es amar
+                y ser amado
+                y eso es gracias a ti, no he podido pensar en nada similar a lo que eres Belén, pero es que no me
+                imagino
+                mi vida sin esa sonrisa que puede aliviar hasta la herida mas grande.
+            </div>
+            <div class="verse" id="verse2">Desde que te conocí no pude dejar de pensarte Belén, mi amor. Te pensaba y
+                soñaba
+                , me preguntaba como sería pasar los días contigo, comer contigo, reirme contigo, llorar contigo, vivir
+                contigo
+                y ahora con lo que vivo junto a ti puedo decirte que es mejor de lo que pude haberme imaginado, eres
+                todo lo real
+                y lo único. Y desde que conocí a que sabían tus labios, pretendí el cielo estrepitosamente y caía hacia
+                ti
+            </div>
+            <div class="verse" id="verse3">Amor siento que cada mes te entendía mejor y me enamoraba de una nueva cosa
+                de ti,
+                eres eso que solo sucede una vez en la vida, eso que cuando lo ves tus ojos quedan aprisionados
+                Ana Belén mi amor, creo en todo lo que hicimos y hacemos. Y creo que cada día podré llegar hasta el
+                fondo de tu alma
+            </div>
+            <div class="verse" id="verse4">Todas las llamadas que he tenido contigo han sido de mis momentos más
+                atesorados,
+                no puedo creer lo afortunado que soy al poder tenerte a lado mi amor, tal vez no físicamente, pero
+                siempre
+                hemos estado en cada mesaje, en cada llamada y en cada Te amo. Siempre para nosotros, y comprendo lo
+                dificil
+                que fue para ti amor y para mi, pero yo creo que la razón es que tenemos algo real, y agradezco a lo que
+                exista que te extraño, porque te amo y quiero tenerte dentro mío
+            </div>
+            <div class="verse" id="verse5">Como te dije alguna vez, deja de esperar y solo ven a mi amormio, te amo
+                mucho y quiero
+                conocerte más, mucho más, todos los días. Y poder comprendernos y amarnos como queremos
+            </div>
+            <div class="verse" id="verse6">Belén No sé si algun día me voy a casar, pero de todas maneras no quiero
+                hacerlo</div>
+            <div class="verse" id="verse7">No si no es contigo amor</div>
+            <div class="verse" id="verse8">Solo puedo decirte que eres todo amor, todo y te amo. Yo Josué te amo. Amor
+                de mi vida y
+                dejme estar dentro de tu vida a pesar de mis errores, y te amaré todos los días como ya lo hago, mi
+                Belén, mi amor
+                mi Nani, mi fonota, amor de mi vida.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const verses = ['verse1', 'verse2', 'verse3', 'verse4', 'verse5', 'verse6', 'verse7', 'verse8'];
+
+        // Delay after each verse before the next one appears (in milliseconds)
+        const delays = [0, 19000, 19000, 19000, 14000, 19000, 10000, 6000];
+        // 0 means verse1 appears instantly when the page loads
+
+        function showVerse(index) {
+            const verse = document.getElementById(verses[index]);
+            verse.style.opacity = '1';
+            verse.style.transform = 'translateY(0)';
+        }
+
+        window.addEventListener('load', function () {
+            let totalDelay = 0;
+            for (let i = 0; i < verses.length; i++) {
+                totalDelay += delays[i];
+                setTimeout(() => showVerse(i), totalDelay);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Tinos', serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.image-container {
+    margin-bottom: 30px;
+}
+
+.poem-image {
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.poem-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.main-title {
+    font-family: 'Tinos', serif;
+    font-style: italic;
+    font-size: 64px;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    to {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.6);
+    }
+}
+
+.poem-content {
+    margin: 60px 0;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.verse {
+    font-family: 'Tinos', serif;
+    font-style: italic;
+    font-size: 28px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+/* Special styling for important verses */
+.verse:last-child {
+    font-size: 32px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .poem-container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .main-title {
+        font-size: 48px;
+    }
+
+    .verse {
+        font-size: 20px;
+    }
+
+    .verse:last-child {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 36px;
+    }
+
+    .verse {
+        font-size: 16px;
+        gap: 15px;
+    }
+
+    .verse:last-child {
+        font-size: 18px;
+    }
+}
